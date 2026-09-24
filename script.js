@@ -1,66 +1,52 @@
-
+/*  GET ELEMENTS */
 
 let menuButton = document.getElementById("menuButton");
-
 let closeButton = document.getElementById("closeButton");
-
 let sideMenu = document.getElementById("sideMenu");
-
 let categoryList = document.getElementById("categoryList");
-
 let categoryCards = document.getElementById("categoryCards");
+let searchInput = document.getElementById("searchInput");
+let searchButton = document.getElementById("searchButton");
+let mealCards = document.getElementById("mealCards");
+let searchTitle = document.getElementById("searchTitle");
 
-let search = document.getElementById('searchInput');
-
-let categories = [];
 
 
+/* OPEN HAMBURGER  */
 
 menuButton.addEventListener("click", function () {
-
     sideMenu.classList.add("active");
-
 });
 
 
 
+/*  CLOSE MENU  */
 
 closeButton.addEventListener("click", function () {
-
     sideMenu.classList.remove("active");
-
 });
 
 
+
+
+/* CATEGORY API */
 
 
 fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
 
-
     .then(function (response) {
-
         return response.json();
-
     })
-
 
     .then(function (data) {
 
+        /*  CATEGORY MENU  */
 
-        
-
-
-
-         categories = data.categories;
-        categories.forEach(function (category) {
-
+        data.categories.forEach(function (category) {
 
             categoryList.innerHTML += `
 
-                <div
-                    class="category-item"
-                    data-category="${category.strCategory}"
-                >
+                <div class="category-item">
 
                     ${category.strCategory}
 
@@ -70,7 +56,7 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
 
 
 
-            /*  CATEGORY CARD */
+            /*  CATEGORY CARD  */
 
             categoryCards.innerHTML += `
 
@@ -81,18 +67,10 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
                         data-category="${category.strCategory}"
                     >
 
-                        <img
-                            src="${category.strCategoryThumb}"
-                            alt="${category.strCategory}"
-                        >
-
-
+                        <img src="${category.strCategoryThumb}" alt="${category.strCategory}">
                         <div class="category-name">
-
                             ${category.strCategory}
-
                         </div>
-
                     </div>
 
                 </div>
@@ -108,56 +86,110 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
 
     .catch(function (error) {
 
-        console.log("Error:", error);
+        console.log("Category Error:", error);
 
     });
 
 
-// search item
+
+/* SEARCH MEALS */
+
+let mealsSection = document.getElementById("mealsSection");
 
 
-// let categories = document.getElementById('categories')
+searchButton.addEventListener("click", function () {
 
-search.addEventListener('input',()=>{
-    let values = search.value.toLowerCase();
+    /* Get search value */
 
-    categoryCards.innerHTML = "";
+    let searchValue = searchInput.value.trim();
 
-    categories.forEach((product)=>{
-        if (product.strCategory.toLowerCase().includes(values)) {
+    /* Check empty input */
 
-            categoryCards.innerHTML += `
-
-                <div class="col-3 mb-3">
-
-                    <div
-                        class="category-card"
-                        data-category="${product.strCategory}"
-                    >
-
-                        <img
-                            src="${product.strCategoryThumb}"
-                            alt="${product.strCategory}"
-                        >
+    if (searchValue === "") {
+        alert("Please enter a meal name");
+        return;
+    }
 
 
-                        <div class="category-name">
+    /* Show MEALS section */
 
-                            ${product.strCategory}
+    mealsSection.classList.add("show");
 
-                        </div>
+    /* Show loading */
 
+    mealCards.innerHTML = `
+
+        <div class="col-12">
+            <p>Loading meals...</p>
+        </div>
+
+    `;
+
+    /* API CALL */
+
+    fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`
+    )
+
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+
+            /* Clear previous meals */
+
+            mealCards.innerHTML = "";
+
+            /* Check if meals found */
+
+            if (data.meals === null) {
+                searchTitle.innerText = "MEALS";
+                mealCards.innerHTML = `
+
+                    <div class="col-12">
+                        <p>
+                            No meals found for "${searchValue}"
+                        </p>
                     </div>
 
-                </div>
+                `;
 
-            `;
-        }
-    })
+                return;
 
-})
+            }
 
+            /* MEALS heading */
 
+            searchTitle.innerText = "MEALS";
 
+            /* Create meal cards */
 
+            data.meals.forEach(function (meal) {
+                mealCards.innerHTML += `
 
+    <div class="mealAll">
+        <div class="meal-card">
+            <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+            <div class="meal-category">
+                ${meal.strCategory}
+            </div>
+            <div class="meal-info">
+                <p>
+                    ${meal.strArea}
+                </p>
+                <h3>
+                    ${meal.strMeal}
+                </h3>
+            </div>
+        </div>
+    </div>
+
+`;
+            });
+        })
+
+        .catch(function (error) {
+            console.log("Search Error:", error);
+        });
+
+});

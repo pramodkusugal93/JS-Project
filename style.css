@@ -422,5 +422,83 @@ nav {
 
 }
 
+/*  MEALS  */
+
+.meals {
+    display: none;
+    padding: 30px 10px;
+    background-color: white;
+}
+
+.meals.show {
+    display: block;
+}
+
+.meals h2 {
+    color: #111;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+
+/*  MEAL CARD  */
+
+.meal-card {
+    background-color: white;
+    border: 1px solid #eeeeee;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+}
+#mealCards{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+.mealAll{
+    margin:5px ;
+}
+
+#searchTitle{
+    font-size: 30px;
+}
+.meal-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+}
+
+.meal-info {
+    padding: 6px 8px 8px;
+}
+
+.meal-info h3 {
+    font-size: 13px;
+    margin: 3px 0;
+    color: #222;
+    font-weight: bold;
+}
+
+.meal-info p {
+    font-size: 10px;
+    color: #777;
+    margin: 0;
+}
+
+.meal-category {
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    background-color:white;
+    color: #E16120;
+    font-size: 7px;
+    padding: 2px 5px;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 10px;
+}
+
 
 

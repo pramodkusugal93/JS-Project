@@ -51,15 +51,10 @@
 
     <div id="sideMenu">
 
-
         <div class="menu-header">
-
             <button id="closeButton">
-
                 <i class="fa-solid fa-circle-xmark"></i>
-
             </button>
-
         </div>
 
 
@@ -81,70 +76,54 @@
 
         <div class="hero-content">
 
-
             <div class="search-box">
-
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search recipes here..."
-                >
-
-
+                <input type="text" id="searchInput" placeholder="Search recipes here...">
                 <button id="searchButton">
-
                     <i class="fa-solid fa-magnifying-glass"></i>
-
                 </button>
-
             </div>
-
 
             <h2>
                 What are your favorite cuisines?
             </h2>
 
-
             <p>
                 PERSONALIZE YOUR EXPERIENCE
             </p>
 
-
         </div>
-
 
     </section>
 
 
 
-    <!--  CATEGORIES  -->
+    <!--  SEARCH RESULTS  -->
 
-    <section class="categories">
+<section class="meals" id="mealsSection">
+
+    <div class="container-fluid">
+        <h2 id="searchTitle">MEALS</h2>
+        <div class="orange-line"></div>
+        <div class="row" id="mealCards"></div>
+    </div>
+
+</section>
 
 
-        <div class="container-fluid">
 
+<!--  CATEGORIES  -->
 
-            <h2>CATEGORIES</h2>
+<section class="categories">
 
-            <div class="orange-line"></div>
-
-
-            <!-- Cards generated using JavaScript -->
-
-            <div
-                class="row"
-                id="categoryCards"
-            >
-
-            </div>
-
+    <div class="container-fluid">
+        <h2>CATEGORIES</h2>
+        <div class="orange-line"></div>
+        <div class="row" id="categoryCards">
 
         </div>
+    </div>
 
-
-    </section>
-
+</section>
 
 
     <!-- Bootstrap JS -->
