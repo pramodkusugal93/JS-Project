@@ -1,0 +1,14 @@
+#sideMenu {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+#sideMenu.active {
+    right: 0;
+}

@@ -48,7 +48,7 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
 
                 <div class="category-item">
 
-                    ${category.strCategory}
+                    <a  href="">${category.strCategory}</a>
 
                 </div>
 
