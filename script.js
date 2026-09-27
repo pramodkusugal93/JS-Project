@@ -65,6 +65,7 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
                     <div
                         class="category-card"
                         data-category="${category.strCategory}"
+                        onclick="openCategory('${category.strCategory}')"
                     >
 
                         <img src="${category.strCategoryThumb}" alt="${category.strCategory}">
@@ -193,3 +194,14 @@ searchButton.addEventListener("click", function () {
         });
 
 });
+
+
+
+
+
+//related meals and discription by clicking category cards
+function openCategory(categoryName) {
+    window.location.href = `descpage.html?category=${categoryName}`;
+
+}
+
