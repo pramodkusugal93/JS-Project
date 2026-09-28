@@ -120,7 +120,7 @@ fetch(
             mealCards.innerHTML += `
 
                 <div>
-
+                    <a href="third.html?id=${meal.idMeal}" class="meal-link">
                     <div class="card meal-card">
 
                         <img src="${meal.strMealThumb}" class="card-img-top" alt="${meal.strMeal}">
@@ -131,7 +131,7 @@ fetch(
                         </div>
 
                     </div>
-
+                     </a>
                 </div>
 
             `;
