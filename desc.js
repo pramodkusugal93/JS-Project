@@ -119,7 +119,7 @@ fetch(
 
             mealCards.innerHTML += `
 
-                <div>
+                <div class="main-cards">
                     <a href="third.html?id=${meal.idMeal}" class="meal-link">
                     <div class="card meal-card">
 

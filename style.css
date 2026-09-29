@@ -465,6 +465,7 @@ nav {
 #mealCards{
     display: grid;
     grid-template-columns: repeat(5,1fr);
+    gap: 20px;
 }
 .mealAll{
     margin:5px ;
@@ -511,6 +512,30 @@ nav {
 }
 
 
+/* second page */
+.discription{
+    border: 1px solid #E16120;
+    margin-top: 25px;
+    padding: 10px;
+}
+#categoryTitle{
+    color: #E16120;
+    font-size: 25px;
+}
+.card-title{
+    font-size: 13px;
+    font-weight: bolder;
+}
+.main-cards{
+    height: 200px;
+}
+.main-cards a{
+    text-decoration: none;
+}
+#searchTitle{
+    margin-top: 10px;
+}
+
 
 
 
@@ -520,9 +545,4 @@ nav {
 }
 .meal-detail-image img{
     width: 400px;
-}
-
-
-.meal-detail-info{
-        
 }
