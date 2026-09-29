@@ -29,6 +29,54 @@ let urlParams = new URLSearchParams(window.location.search);
 let mealId = urlParams.get("id");
 
 
+
+/* LOAD CATEGORY MENU */
+
+fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+
+        data.categories.forEach(function (category) {
+
+            categoryList.innerHTML += `
+                <div class="category-item">
+                    <a href="descpage.html?category=${category.strCategory}">
+                        ${category.strCategory}
+                    </a>
+                </div>
+            `;
+
+            detailCategoryCards.innerHTML += `
+                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+
+                    <div
+                        class="category-card"
+                        onclick="openCategory('${category.strCategory}')"
+                    >
+
+                        <img
+                            src="${category.strCategoryThumb}"
+                            alt="${category.strCategory}"
+                        >
+
+                        <div class="category-name">
+                            ${category.strCategory}
+                        </div>
+
+                    </div>
+
+                </div>
+            `;
+
+        });
+
+    })
+    .catch(function (error) {
+        console.log("Category Error:", error);
+    });
+
 /* OPEN CATEGORY PAGE */
 
 function openCategory(categoryName) {
