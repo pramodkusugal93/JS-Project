@@ -540,9 +540,145 @@ nav {
 
 
 /* third page css */
-.meal-detail-top{
+
+/* MEAL DETAILS PAGE */
+
+.meal-details-section {
+    padding: 35px 20px;
+    background-color: #f5f5f5;
+}
+
+.meal-details-section h2 {
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.meal-detail-card {
+    background-color: white;
+    border: 1px solid #eeeeee;
+    padding: 20px;
+}
+
+.meal-detail-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.meal-detail-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.meal-detail-info h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.meal-detail-info p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.meal-detail-info h4,
+.meal-measures h4,
+.meal-instructions h4 {
+    font-size: 16px;
+    margin: 20px 0 12px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 8px;
+}
+
+.ingredients-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: #E16120;
+    padding: 12px;
+    color: white;
+}
+
+.ingredient-item {
     display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
 }
-.meal-detail-image img{
-    width: 400px;
+
+.ingredient-item i {
+    font-size: 11px;
 }
+
+.tags-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.meal-tag {
+    display: inline-block;
+    background-color: #f5f5f5;
+    border: 1px solid #dddddd;
+    padding: 3px 8px;
+    font-size: 11px;
+}
+
+.meal-measures {
+    margin-top: 25px;
+}
+
+.measure-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 20px;
+    border: 1px solid #eeeeee;
+    padding: 10px;
+}
+
+.measure-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 9px 5px;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 13px;
+}
+
+.meal-instructions {
+    margin-top: 25px;
+}
+
+.instructions-text p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.youtube-button {
+    display: inline-block;
+    background-color: #E16120;
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.youtube-button:hover {
+    background-color: #c84d10;
+    color: white;
+}
+
+.meal-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.meal-link:hover {
+    color: inherit;
+}
+

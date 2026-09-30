@@ -42,14 +42,14 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
 
             categoryList.innerHTML += `
                 <div class="category-item">
-                    <a href="descpage.html?category=${category.strCategory}">
+                    <a href="#">
                         ${category.strCategory}
                     </a>
                 </div>
             `;
 
             detailCategoryCards.innerHTML += `
-                <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-3">
+                <div class="col-5 col-md-4 col-lg-3 col-xl-2 mb-3">
 
                     <div
                         class="category-card"
@@ -113,7 +113,8 @@ else {
 
             let meal = data.meals[0];
 
-
+            let home = document.getElementById("breadcrumbMeal")
+            home.innerHTML=`${meal.strMeal}`
             /* GET INGREDIENTS AND MEASUREMENTS */
 
             let ingredientsHTML = "";
