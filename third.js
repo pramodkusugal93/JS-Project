@@ -196,6 +196,7 @@ else {
                         <div class="meal-detail-info">
 
                             <h3>${meal.strMeal}</h3>
+                            <div id="line"></div>
 
                             <p>
                                 <strong>Category:</strong>
@@ -214,12 +215,13 @@ else {
                                 </span>
                             </p>
 
-                        
+                            <div class="Ingredients">
                             <h4>Ingredients</h4>
 
                             <ul class="ingredients-list">
                                 ${ingredientsHTML}
                             </ul>
+                            </div>
 
                         </div>
 
