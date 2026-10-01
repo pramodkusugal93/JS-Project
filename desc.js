@@ -125,9 +125,9 @@ fetch(
 
                         <img src="${meal.strMealThumb}" class="card-img-top" alt="${meal.strMeal}">
                         <div class="card-body">
-                            <h5 class="card-title">
+                            <h6 class="card-title">
                                 ${meal.strMeal}
-                            </h5>
+                            </h6>
                         </div>
 
                     </div>

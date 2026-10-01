@@ -49,7 +49,7 @@ fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
             `;
 
             detailCategoryCards.innerHTML += `
-                <div class="col-5 col-md-4 col-lg-3 col-xl-2 mb-3">
+                <div class="col-12 col-md-6 col-lg-3 mb-3">
 
                     <div
                         class="category-card"
@@ -150,7 +150,10 @@ else {
 
                     measurementsHTML += `
                         <div class="measure-item">
+                            <div>
+                            <img src="/spoon.jpeg" class="spoon">
                             <span>${measure || "As required"}</span>
+                            </div>
                             <span>${ingredient}</span>
                         </div>
                     `;
@@ -200,8 +203,8 @@ else {
                             </p>
 
                             <p>
-                                <strong>Area:</strong>
-                                ${meal.strArea || "Not available"}
+                                <strong>Sourse:</strong>
+                                ${meal.strSource || "No source Available"}
                             </p>
 
                             <p>
@@ -211,11 +214,12 @@ else {
                                 </span>
                             </p>
 
+                        
                             <h4>Ingredients</h4>
 
-                            <div class="ingredients-list">
+                            <ul class="ingredients-list">
                                 ${ingredientsHTML}
-                            </div>
+                            </ul>
 
                         </div>
 
@@ -238,6 +242,7 @@ else {
                         <h4>Instructions</h4>
 
                         <div class="instructions-text">
+                        
                             ${meal.strInstructions
                                 ? meal.strInstructions
                                     .split(/\r?\n/)
@@ -245,26 +250,14 @@ else {
                                         return step.trim() !== "";
                                     })
                                     .map(function (step) {
-                                        return `<p>${step}</p>`;
+                                        return `<p><i class="fa-solid fa-check" id="rightmark"></i> ${step}</p>`;
                                     })
                                     .join("")
                                 : "<p>No instructions available.</p>"
                             }
                         </div>
 
-                        ${
-                            meal.strYoutube
-                                ? `<a
-                                    href="${meal.strYoutube}"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="youtube-button"
-                                >
-                                    <i class="fa-brands fa-youtube"></i>
-                                    Watch Recipe
-                                </a>`
-                                : ""
-                        }
+                        
 
                     </div>
 
