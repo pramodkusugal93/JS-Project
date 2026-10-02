@@ -215,12 +215,16 @@ else {
                                 </span>
                             </p>
 
-                            <div class="Ingredients">
-                            <h4>Ingredients</h4>
+                            <div class="ingredientBox">
 
-                            <ul class="ingredients-list">
-                                ${ingredientsHTML}
-                            </ul>
+                                <h4 class="ing">
+                                    Ingredients
+                                </h4>
+
+                                <ul class="getIng">
+                                    ${getIngredients(meal)}
+                                </ul>
+
                             </div>
 
                         </div>
@@ -278,4 +282,23 @@ else {
 
         });
 
+}
+
+function getIngredients(meal) {
+
+    let ingredients = "";
+
+    for (let i = 1; i <= 20; i++) {
+
+        let ingredient = meal[`strIngredient${i}`];
+
+        if (ingredient && ingredient.trim() !== "") {
+
+            ingredients += `
+                <li>${ingredient}</li>
+            `;
+        }
+    }
+
+    return ingredients;
 }

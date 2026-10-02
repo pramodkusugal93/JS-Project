@@ -37,6 +37,16 @@ nav {
 
     padding: 0 20px;
 
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
 }
 
 
@@ -598,7 +608,7 @@ nav {
 .meal-detail-info h3{
     color: #E16120;
 }
-
+/* 
 .ingredients-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -623,7 +633,7 @@ nav {
 
 .ingredient-item i {
     font-size: 11px;
-}
+} */
 
 .tags-container {
     display: inline-flex;
@@ -721,4 +731,66 @@ nav {
 
 .mealhead{
     text-decoration: none;
+}
+
+
+/* INGREDIENTS */
+
+.ingredientBox {
+    width: 100%;
+    margin-top: 5px;
+    background-color: #E16120;
+
+}
+
+.ing {
+    color: white;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0;
+    padding: 12px 10px 5px;
+}
+
+.getIng {
+    margin: 0;
+    padding: 3px 10px 18px;
+    list-style: none;
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px 12px;
+
+    counter-reset: ingredient;
+}
+
+.getIng li {
+    position: relative;
+    color: white;
+    font-size: 12px;
+    padding-left: 18px;
+}
+
+.getIng li::before {
+    content: counter(ingredient);
+    counter-increment: ingredient;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 14px;
+    height: 14px;
+    padding-right: 1px;
+
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: rgb(37, 150, 199);
+
+    text-align: center;
+    line-height: 11px;
+
+    font-size: 10px;
+    color: white;
+
+    margin-top: 4px;
 }
