@@ -608,32 +608,6 @@ nav {
 .meal-detail-info h3{
     color: #E16120;
 }
-/* 
-.ingredients-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    background-color: #E16120;
-    padding: 12px;
-    color: white;
-}
-.Ingredients{
-    background-color: #E16120;
-}
-.Ingredients h4{
-    color: white;
-}
-
-.ingredient-item {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 12px;
-}
-
-.ingredient-item i {
-    font-size: 11px;
-} */
 
 .tags-container {
     display: inline-flex;
@@ -781,6 +755,7 @@ nav {
     width: 14px;
     height: 14px;
     padding-right: 1px;
+    padding-top: 2px;
 
     border: 1px solid white;
     border-radius: 50%;
@@ -792,5 +767,151 @@ nav {
     font-size: 10px;
     color: white;
 
-    margin-top: 4px;
+    margin-top: 2px;
+}
+
+
+
+/*    Responsive     */
+
+
+/* TABLETS */
+@media screen and (max-width: 768px) {
+
+    /* NAVBAR */
+    nav {
+        padding: 0 15px;
+    }
+
+    .logo h1 {
+        font-size: 19px;
+    }
+
+    /* SIDE MENU */
+    #sideMenu {
+        width: 280px;
+        right: -280px;
+        max-width: 85vw;
+    }
+
+    #sideMenu.active {
+        right: 0;
+    }
+
+    /* HERO BANNER */
+    .hero {
+        height: 350px;
+        background-position: center;
+    }
+
+    .hero-content h2 {
+        font-size: 28px;
+        padding: 0 15px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+
+    /* SEARCH */
+    #searchInput {
+        width: 280px;
+        max-width: calc(100vw - 90px);
+        font-size: 14px;
+    }
+
+    /* CATEGORIES */
+    .categories {
+        padding: 45px 15px;
+    }
+
+    .categories h2 {
+        font-size: 23px;
+        letter-spacing: 2px;
+    }
+
+    .category-card img {
+        height: 130px;
+    }
+
+    /* MEAL CARDS */
+    #mealCards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .meal-card {
+        height: 195px;
+    }
+
+    .meal-card img {
+        height: 130px;
+    }
+
+    .meal-card .card-body {
+        padding: 7px;
+    }
+
+    .card-title {
+        font-size: 12px;
+        line-height: 16px;
+        overflow-wrap: anywhere;
+    }
+
+    #searchTitle {
+        font-size: 25px;
+    }
+
+    /* SECOND PAGE */
+    #categoryTitle {
+        font-size: 22px;
+    }
+
+    .discription {
+        margin-top: 18px;
+        padding: 8px;
+    }
+
+    /* MEAL DETAILS PAGE */
+    .meal-details-section {
+        padding: 25px 15px;
+    }
+
+    .meal-detail-card {
+        padding: 15px;
+    }
+
+    .meal-detail-top {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .meal-detail-image img {
+        height: 320px;
+    }
+
+    .meal-detail-info h3 {
+        font-size: 21px;
+    }
+
+    .measure-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 10px;
+    }
+
+    .measure-item {
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    .getIng {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .meal-breadcrumb {
+        margin: 10px;
+        padding: 9px;
+        overflow-wrap: anywhere;
+    }
 }
