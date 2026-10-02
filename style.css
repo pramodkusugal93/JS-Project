@@ -915,3 +915,248 @@ nav {
         overflow-wrap: anywhere;
     }
 }
+
+/* MOBILE PHONES */
+@media screen and (max-width: 480px) {
+
+    /* NAVBAR */
+    nav {
+        height: 50px;
+        padding: 0 10px;
+    }
+
+    .logo img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .logo h1 {
+        font-size: 17px;
+    }
+
+    #menuButton {
+        font-size: 22px;
+    }
+
+    /* HERO BANNER */
+    .hero {
+        height: 300px;
+        background-position: center;
+    }
+
+    .hero-content {
+        margin-top: -15px;
+    }
+
+    .hero-content h2 {
+        font-size: 23px;
+        margin-top: 20px;
+        line-height: 1.3;
+    }
+
+    .hero-content p {
+        font-size: 11px;
+    }
+
+    /* SEARCH */
+    .search-box {
+        gap: 6px;
+        padding: 0 12px;
+    }
+
+    #searchInput {
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        height: 38px;
+        padding: 0 14px;
+        font-size: 13px;
+    }
+
+    #searchButton {
+        flex: 0 0 38px;
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+
+    /* CATEGORY SECTION */
+    .categories {
+        padding: 30px 10px;
+    }
+
+    .categories h2 {
+        font-size: 19px;
+        letter-spacing: 1px;
+    }
+
+    .orange-line {
+        width: 60px;
+        margin-bottom: 18px;
+    }
+
+    .category-card img {
+        height: 110px;
+    }
+
+    .category-name {
+        font-size: 9px;
+        padding: 3px 5px;
+    }
+
+    /* MEAL CARDS */
+    .meals {
+        padding: 20px 8px;
+    }
+
+    #mealCards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .main-cards {
+        min-width: 0;
+        height: auto;
+    }
+
+    .meal-card {
+        height: 190px;
+        min-width: 0;
+    }
+
+    .meal-card img {
+        height: 125px;
+    }
+
+    .meal-card .card-body {
+        padding: 7px 6px;
+        min-height: 60px;
+    }
+
+    .card-title {
+        font-size: 11px;
+        line-height: 15px;
+        overflow-wrap: anywhere;
+    }
+
+    #searchTitle {
+        font-size: 21px;
+        line-height: 1.3;
+    }
+
+    /* SECOND PAGE */
+    #categoryTitle {
+        font-size: 20px;
+    }
+
+    .discription {
+        margin-top: 15px;
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    /* MEAL DETAILS PAGE */
+    .meal-details-section {
+        padding: 20px 10px;
+    }
+
+    .meal-details-section h2 {
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
+
+    .meal-detail-card {
+        padding: 10px;
+    }
+
+    .meal-detail-top {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .meal-detail-image img {
+        height: 240px;
+    }
+
+    .meal-detail-info h3 {
+        font-size: 19px;
+        margin-bottom: 10px;
+        overflow-wrap: anywhere;
+    }
+
+    .meal-detail-info p {
+        font-size: 13px;
+    }
+
+    .meal-detail-info h4,
+    .meal-measures h4,
+    .meal-instructions h4 {
+        font-size: 15px;
+        margin: 16px 0 10px;
+    }
+
+    .tags-container {
+        gap: 5px;
+    }
+
+    .meal-tag {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
+
+    /* INGREDIENTS */
+    .ingredientBox {
+        margin-top: 5px;
+    }
+
+    .ing {
+        font-size: 18px;
+        padding: 10px 8px 5px;
+    }
+
+    .getIng {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 5px 8px 15px;
+    }
+
+    .getIng li {
+        font-size: 12px;
+    }
+
+    /* MEASURES */
+    .measure-list {
+        grid-template-columns: 1fr;
+        padding: 7px;
+    }
+
+    .measure-item {
+        font-size: 12px;
+        padding: 8px 4px;
+    }
+
+    /* INSTRUCTIONS */
+    .instructions-text p {
+        font-size: 12px;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
+
+    #rightmark {
+        padding: 2px;
+        margin-right: 4px;
+    }
+
+    .youtube-button {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    /* BREADCRUMB */
+    .meal-breadcrumb {
+        margin: 8px;
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
